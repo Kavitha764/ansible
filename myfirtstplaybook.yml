@@ -1,0 +1,18 @@
+---
+- hosts: ubuntuserver
+  become: yes
+  tasks: 
+  - name: i want to ping all my ansible nodes or hosts
+    ping: 
+  - name: i want to install webserver on ubuntu nodes
+    apt: 
+     name: "{{mywebpackforubuntu}}"
+     state: present
+    when: ansible_os_family=="Debian"
+
+  - name: i want to install webserver on RedHat
+    apt: 
+     name: "{{mywebpackforredhat}}"
+     state: present
+    when: ansible_os_family=="RedHat"
+    
