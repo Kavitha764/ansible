@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: yes
+  tasks: 
+  - name: i want to ping all ansible nodes
+  ping:
+
+

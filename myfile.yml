@@ -1,0 +1,17 @@
+---
+- hosts: 172.31.8.97
+  become: yes
+  tasks:
+  - name: create a file
+    file:
+     path: /home/ubuntu/mytestfile.txt
+     state: touch
+  - include: file.yml
+  - name: i want to install apache2 on ubuntu   
+    apt: 
+      name: 
+      state: present
+  - name: i want to copy file into ansible node side
+    template:
+     src: myindex.j2
+     dest: /var/www/html/index.html

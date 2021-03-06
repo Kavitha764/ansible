@@ -1,0 +1,10 @@
+---
+- name: create a file
+  file: 
+   path: /home/ubuntu/kavi.txt
+   state: touch
+- name: create a folder
+  file:
+   path: /home/ubuntu/myfolder
+   state: directory
+   
